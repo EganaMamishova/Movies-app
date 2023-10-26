@@ -2,6 +2,7 @@
 import { Route, Routes } from 'react-router';
 import React from 'react';
 import './index.css';
+import "./burgerMenu.css";
 import Latest from './pages/Latest';
 import NowPlaying from './pages/NowPlaying';
 import Popular from './pages/Popular';

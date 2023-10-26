@@ -1,0 +1,41 @@
+
+.MenuClose{
+    display: none;
+}
+.burgerMenu{
+    font-size: 40px;
+  
+}
+.close{
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+   .MenuClose{
+       display: block;
+       display: flex ;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+   .rightSide{
+    display: none;
+   }
+
+.open{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+     width: 200px;
+    position: fixed;
+    top: 90px;
+    right: 0;
+    gap: 35px;
+    padding: 40px;
+    background-color: #020283;
+    z-index: 100;
+}
+   .headerList{
+    font-size: 19px;
+   }
+}
