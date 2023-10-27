@@ -8,12 +8,11 @@ import NowPlaying from './pages/NowPlaying';
 import Popular from './pages/Popular';
 import TopRated from './pages/TopRated';
 import UpComing from './pages/UpComing';
-import Heart from './pages/Heart';
 import WatchList from './pages/WatchList';
-import backGround from './Components/Imgs/Background.png'
 import HomeLayout from './Components/layout/HomeLayout';
 import DetailedLayout from './Components/layout/DetailedLayout';
 import Details from './pages/Details';
+import Favourite from './pages/Favourite';
 
 function App() {
   
@@ -29,7 +28,7 @@ function App() {
           <Route path='/upcoming/:name' element={<UpComing />} />
         </Route>
         <Route path='/' element={<DetailedLayout />} >
-          <Route path='/heart' element={<Heart />} />
+          <Route path='/favourite' element={<Favourite />} />
           <Route path='/watchlist' element={<WatchList />} />
           <Route path='/details/:id' element={<Details />} />
         </Route>

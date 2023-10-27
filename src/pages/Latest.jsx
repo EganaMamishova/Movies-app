@@ -6,7 +6,7 @@ const Latest = () => {
 
   const selector = useSelector((state) => state.counter)
   const dispatch = useDispatch();
-  console.log(selector.data);
+
   useEffect(() => {
     const Key = "07989e510be31f37e529531744bfc3ec";
 
@@ -17,6 +17,8 @@ const Latest = () => {
       .then((data) => dispatch(setData(data)));
   }, []);
 
+    console.log(selector.favourite);
+    
   return (
     < >
 

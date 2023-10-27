@@ -89,10 +89,6 @@ body{
 
 }
 
-.main {
-  background-color: red;
-}
-
 .tagP {
   font-family: 'Poppins' sans-serif;
   font-style: normal;
@@ -410,5 +406,24 @@ body{
 }
 }
 
+.count {
+  border-radius: 50%;
+  padding: 0 5px;
+  background-color: red;
+  font-size: 13px;
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  top: -5px;
+  right: -5px;
+  z-index: 5;
 
+}
+
+.boxHeart {
+  position: relative;
+}
 

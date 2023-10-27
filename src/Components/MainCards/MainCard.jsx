@@ -1,19 +1,18 @@
 import React from 'react'
 import { AiOutlineHeart, AiOutlineStar, AiOutlineTag } from "react-icons/ai";
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setFavourite } from '../../feature/counterSlice';
 const API_IMG = "https://image.tmdb.org/t/p/w500";
 
 const MainCard = () => {
 
     const selector = useSelector((state) => state.counter);
-   
-
-
-
+    const dispatch = useDispatch();
 
     return (
-        <div className='container' style={{ display: "flex", flexWrap: "wrap", justifyContent: " space-between" }}>
+        <div className='container' style={{ display: "flex",  flexWrap: "wrap", justifyContent: " space-between" }}>
 
             {
 
@@ -27,11 +26,11 @@ const MainCard = () => {
                                     <>
                                         <div className='movieRateHeart' >
                                             <div className='starVoteContainer' >
-                                            <p> <AiOutlineStar className='star' />
+                                            <p> <AiOutlineStar  className='star' />
                                                 {item.vote_average}</p>
                                             </div>
                                             <div className='heartContainer'>
-                                                <AiOutlineHeart className='heart' />
+                                                <AiOutlineHeart onClick={()=>dispatch(setFavourite(item.id))} className='heart' />
                                             </div>
                                         </div>
                                         <NavLink to={`/details/${item.id}`} >
@@ -46,9 +45,6 @@ const MainCard = () => {
 
                                 }
 
-
-
-
                             </div>
                         )
                     }) :
@@ -62,7 +58,7 @@ const MainCard = () => {
                                         {item.vote_average}
                                     </div>
                                     <div className='heartContainer'>
-                                        <AiOutlineHeart className='heart' />
+                                        <AiOutlineHeart onClick={()=>dispatch(setFavourite(item.id))} className='heart' />
                                     </div>
                                 </div>
                                 <NavLink to={`/details/${item.id}`} >
@@ -76,7 +72,6 @@ const MainCard = () => {
                         )
                     })
             }
-
 
         </div>
 

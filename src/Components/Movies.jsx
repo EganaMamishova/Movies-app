@@ -18,8 +18,8 @@ const Movies = () => {
     dispatch(setDoSearch(data))
     
   }
-  console.log(selector.data);
   
+ 
 
   return (
     <div className='moviesContainer'>
