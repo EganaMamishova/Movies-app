@@ -34,7 +34,7 @@ function App() {
         </Route>
       </Routes>
       <div className='mainBackGround'>
-        {/* <img className='backGroundImage' alt='backImg' src={backGround} /> */}
+      
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { setFavourite, setHandleFavouriteDelete } from '../feature/counterSlice'
+import { setHandleFavouriteDelete } from '../feature/counterSlice'
 import { AiFillHeart, AiOutlineStar, AiOutlineTag } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'

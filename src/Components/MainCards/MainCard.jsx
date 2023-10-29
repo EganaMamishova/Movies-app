@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineHeart, AiOutlineStar, AiOutlineTag } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineStar, AiOutlineTag, AiFillHeart } from "react-icons/ai";
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -49,6 +49,7 @@ const MainCard = () => {
                         )
                     }) :
                     selector.data.results?.map((item, index) => {
+                        
                         return (
                             <div className='moviesCardContainer' key={index}>
 
@@ -58,7 +59,7 @@ const MainCard = () => {
                                         {item.vote_average}
                                     </div>
                                     <div className='heartContainer'>
-                                        <AiOutlineHeart onClick={()=>dispatch(setFavourite(item.id))} className='heart' />
+                           {item.heartTagValue === true ? <AiFillHeart/> :  <AiOutlineHeart onClick={()=>dispatch(setFavourite(item.id))} className='heart' /> }      
                                     </div>
                                 </div>
                                 <NavLink to={`/details/${item.id}`} >

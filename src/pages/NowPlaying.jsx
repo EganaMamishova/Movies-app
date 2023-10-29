@@ -18,7 +18,7 @@ const NowPlaying = () => {
       .then(resp => resp.json())
       .then(data => dispatch(setData(data)))
 
-  }, [])
+  }, [dispatch, name])
 
   return (
     <div>

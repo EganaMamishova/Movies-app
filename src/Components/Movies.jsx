@@ -2,13 +2,12 @@ import React from 'react'
 import MainCard from './MainCards/MainCard'
 
 import { Input } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setDoSearch } from '../feature/counterSlice';
 const { Search } = Input;
 
 const Movies = () => {
 
-  const selector = useSelector((state) => state.counter)
   const dispatch = useDispatch();
  
   const change = async (value) => {
@@ -18,8 +17,6 @@ const Movies = () => {
     dispatch(setDoSearch(data))
     
   }
-  
- 
 
   return (
     <div className='moviesContainer'>

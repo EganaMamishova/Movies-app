@@ -14,7 +14,7 @@ const Details = () => {
       .then(resp => resp.json())
       .then(data => setDataDetail(data))
 
-  },[])
+  },[id])
 
   console.log(dataDetail);
   let backdrop = `https://image.tmdb.org/t/p/original/${dataDetail.backdrop_path}`
