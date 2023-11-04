@@ -420,10 +420,13 @@ body{
   top: -5px;
   right: -5px;
   z-index: 5;
-
 }
 
 .boxHeart {
+  position: relative;
+}
+
+.boxTag {
   position: relative;
 }
 

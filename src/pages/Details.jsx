@@ -14,7 +14,7 @@ const Details = () => {
       .then(resp => resp.json())
       .then(data => setDataDetail(data))
 
-  },[id])
+  }, [id])
 
   console.log(dataDetail);
   let backdrop = `https://image.tmdb.org/t/p/original/${dataDetail.backdrop_path}`
@@ -41,7 +41,7 @@ const Details = () => {
           </div>
           <div className="starContainer">
             <AiOutlineStar className='star' />
-            <div className='count'>{dataDetail.vote_average}</div>
+            <div>{dataDetail.vote_average}</div>
           </div>
           <div className='BottomHeartTagContainer' >
             <AiOutlineHeart className='detailedHeart' />
