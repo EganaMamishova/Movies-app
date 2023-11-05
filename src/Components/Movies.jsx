@@ -3,7 +3,7 @@ import MainCard from './MainCards/MainCard'
 
 import { Input } from 'antd';
 import { useDispatch } from 'react-redux';
-import { setDoSearch } from '../feature/counterSlice';
+import { setData } from '../feature/counterSlice';
 const { Search } = Input;
 
 const Movies = () => {
@@ -14,9 +14,8 @@ const Movies = () => {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=07989e510be31f37e529531744bfc3ec&query=${value}`
     const resp = await fetch(url)
     const data = await resp.json()
-    dispatch(setDoSearch(data))
-    
-  }
+    dispatch(setData(data))  
+  } 
 
   return (
     <div className='moviesContainer'>

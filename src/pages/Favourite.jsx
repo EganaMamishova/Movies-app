@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { setHandleFavouriteDelete } from '../feature/counterSlice'
-import { AiFillHeart, AiOutlineStar, AiOutlineTag } from 'react-icons/ai'
+import { AiFillHeart, AiFillTag, AiOutlineStar, AiOutlineTag } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 const API_IMG = "https://image.tmdb.org/t/p/w500";
@@ -31,7 +31,7 @@ const Favourite = () => {
             </NavLink>
             <div className='movieNameTitle'>
                 <p>{item.original_title.slice(0, 26)}</p>
-                <AiOutlineTag className='aiOutlineTag' />
+               {/*  {item.watchlistValue === true ? <AiFillTag className='aiOutlineTag' /> : <AiOutlineTag className='aiOutlineTag' />} */}
             </div>
         </div>
           ))

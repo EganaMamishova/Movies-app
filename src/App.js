@@ -13,12 +13,14 @@ import HomeLayout from './Components/layout/HomeLayout';
 import DetailedLayout from './Components/layout/DetailedLayout';
 import Details from './pages/Details';
 import Favourite from './pages/Favourite';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
   return (
     <div className='main'>
-
+   <ToastContainer/>
       <Routes>
         <Route path='/' element={<HomeLayout />}>
           <Route index={true} element={<Latest />} />

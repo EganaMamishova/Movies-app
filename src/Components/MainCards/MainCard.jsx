@@ -15,8 +15,8 @@ const MainCard = () => {
     return (
         <div className='container' style={{ display: "flex", flexWrap: "wrap", justifyContent: " space-between" }}>
             {
-                selector.search.results ?
-                    selector.search.results?.map((item, index) => {
+                selector.data.results ?
+                    selector.data.results?.map((item, index) => {
                         return (
 
                             <div className='moviesCardContainer' key={index}>

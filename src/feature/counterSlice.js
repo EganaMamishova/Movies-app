@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+
 
 const counterSlice = createSlice({
     name: "counter",
@@ -24,11 +26,21 @@ const counterSlice = createSlice({
             state.search = action.payload;
         },
         setFavourite: (state, action) => {
+            toast.success('❤️ Added to Favourite List!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
             const itemId = action.payload;
             state.itemToFavourite = state.data.results.find(item => item.id === itemId);
             // state.countFavourite += 1;
             // state.favourite.push({...state.data?.results?.find(item => item.id === action.payload)});
-            console.log(state.itemToFavourite.heartTagValue, "salam");
+            
             if (state.itemToFavourite) {
                 if (!state.itemToFavourite.heartTagValue) {
                     state.itemToFavourite.heartTagValue = !state.itemToFavourite.heartTagValue;
@@ -36,9 +48,19 @@ const counterSlice = createSlice({
                     state.favourite.push(state.itemToFavourite);
                 }
             }
-
+             
         },
         setHandleFavouriteDelete: (state, action) => {
+            toast.error('💔 Removed from Favourite List!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
               const itemId = action.payload;
               state.itemToRemove = state.favourite.find((item) => item.id === itemId);
   
@@ -57,6 +79,16 @@ const counterSlice = createSlice({
             state.loading = false
         },
         setWatchlist:(state, action)=> {
+            toast.success('📥 Added to WatchList!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
             const itemId = action.payload;
             state.itemToWatchlist = state.data.results.find(item => item.id === itemId);
             if (state.itemToWatchlist) {
@@ -64,11 +96,20 @@ const counterSlice = createSlice({
                     state.itemToWatchlist.watchlistValue = !state.itemToWatchlist.watchlistValue;
                     state.countWatchlist += 1;
                     state.watchlist.push(state.itemToWatchlist);
-                }
-               
+                }            
             }
         },
         setHandleWatchlistDelete: (state, action)=> {
+            toast.error('📤 Removed from WatchList!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
             const itemId = action.payload;
               state.itemToRemove = state.watchlist.find((item) => item.id === itemId);
               if (state.itemToRemove){
